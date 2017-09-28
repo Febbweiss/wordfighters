@@ -29,6 +29,8 @@ If running with a server, 2 modes are availables :
 Words dictionary is provided by the [Scrabble-Resolver](https://github.com/Febbweiss/scrabble-resolver) project.
 Currently, only english and french dictionaries are provided.
 
+A demo is available [here](https://febbweiss.github.io/games/wordfighters/)
+
 Credits :
 ---
 + Graphics : Namco&trade; from "Super Puzzle Fighters 2" and "Super Gems Fighters
