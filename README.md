@@ -35,27 +35,6 @@ Credits :
 + Code : Fabrice Ecaille aka Febbweiss
 + Tools : gameQuery
 
-<dl>
-        <dt>
-                <g:message code="game.credits.graphics" />
-        </dt>
-        <dd>
-                <g:message code="wordfighter.credits.graphics.author" />
-        </dd>
-        <dt>
-                <g:message code="game.credits.code" />
-        </dt>
-        <dd>
-                <g:message code="wordfighter.credits.code.author" />
-        </dd>
-        <dt>
-                <g:message code="game.credits.tools" />
-        </dt>
-        <dd>
-                <g:message code="wordfighter.credits.tools" />
-        </dd>
-</dl>
-
 Licences :
 ---
 Source code is under MIT Licence Sprite is under CC BY-SA 3.0
