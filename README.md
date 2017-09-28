@@ -31,11 +31,9 @@ Currently, only english and french dictionaries are provided.
 
 Credits :
 ---
-Graphics : Namco&trade; from "Super Puzzle Fighters 2" and "Super Gems Fighters
-
-Code : Fabrice Ecaille aka Febbweiss
-
-Tools : gameQuery
++ Graphics : Namco&trade; from "Super Puzzle Fighters 2" and "Super Gems Fighters
++ Code : Fabrice Ecaille aka Febbweiss
++ Tools : gameQuery
 
 <dl>
         <dt>
