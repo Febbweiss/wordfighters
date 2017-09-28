@@ -37,4 +37,4 @@ Credits :
 
 Licences :
 ---
-Source code is under MIT Licence Sprite is under CC BY-SA 3.0
+Source code is under [MIT Licence](http://opensource.org/licenses/mit-license.php)
