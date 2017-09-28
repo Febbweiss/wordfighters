@@ -17,7 +17,7 @@ To get new letters, press the "Space" bar.
         
 If you are blocked, you can switch letters but be careful : you loose 5 points per words not found !!
 
-A live demo is avalaible here
+A demo is available [here](https://febbweiss.github.io/games/wordfighters/)
 
 Under the hood :
 ---
@@ -28,8 +28,6 @@ If running with a server, 2 modes are availables :
 
 Words dictionary is provided by the [Scrabble-Resolver](https://github.com/Febbweiss/scrabble-resolver) project.
 Currently, only english and french dictionaries are provided.
-
-A demo is available [here](https://febbweiss.github.io/games/wordfighters/)
 
 Credits :
 ---
