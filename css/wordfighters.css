@@ -1,0 +1,414 @@
+.letter {
+	width: 62px;
+	height: 62px;
+	background-image: url( "../images/scrabble_sprite.png" );
+	background-position: -372px -186px;
+	display: inline-block;
+}
+
+.blank {
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: left;
+}
+
+.a {
+	background-position: 0px 0px;
+}
+.b {
+	background-position: -62px 0px;
+}
+.c {
+	background-position: -124px 0px;
+}
+.d {
+	background-position: -186px 0px;
+}
+.e {
+	background-position: -248px 0px;
+}
+.f {
+	background-position: -310px 0px;
+}
+.g {
+	background-position: -372px 0px;
+}
+.h {
+	background-position: 0px -62px;
+}
+.i {
+	background-position: -62px -62px;
+}
+.j {
+	background-position: -124px -62px;
+}
+.k {
+	background-position: -186px -62px;
+}
+.l {
+	background-position: -248px -62px;
+}
+.m {
+	background-position: -310px -62px;
+}
+.n {
+	background-position: -372px -62px;
+}
+.o {
+	background-position: 0px -124px;
+}
+.p {
+	background-position: -62px -124px;
+}
+.q {
+	background-position: -124px -124px;
+}
+.r {
+	background-position: -186px -124px;
+}
+.s {
+	background-position: -248px -124px;
+}
+.t {
+	background-position: -310px -124px;
+}
+.u {
+	background-position: -372px -124px;
+}
+.v {
+	background-position: 0px -186px;
+}
+.w {
+	background-position: -62px -186px;
+}
+.x {
+	background-position: -124px -186px;
+}
+.y {
+	background-position: -186px -186px;
+}
+.z {
+	background-position: -248px -186px;
+}
+
+.hideLetter {
+	visibility: hidden;
+}
+.showLetter {
+	visibility: visible;
+}
+
+#typed {
+	height: 62px;
+}
+
+#typed span img {
+	display: none;
+}
+
+#valid div {
+	float: none;
+	clear: both;
+}
+
+#valid span {
+	font-weight: bold;
+}
+
+#valid ul {
+	 list-style-type:none;
+}
+
+#valid li {
+	display: block;
+	float: left ;
+	margin-left:2px;
+	margin-bottom:2px;
+	padding:2px;
+	height: 1em;
+	text-align: center;
+}
+
+#valid3 li {
+	width: 2em;
+}
+#valid4 li {
+	width: 3em;
+}
+#valid5 li {
+	width: 4em;
+}
+#valid6 li {
+	width: 5em;
+}
+#valid7 li {
+	width: 6em;
+}
+
+#howtoLayout {
+}
+
+#howto {
+	position:fixed;  
+	_position:absolute; /* hack for internet explorer 6*/  
+	z-index:1;  
+}
+
+.levelChoice {
+	height: 60%;
+	opacity: 0.85;
+	position:relative;
+	width: 100%; 
+	height: 40px; 
+	margin-bottom: 5px;
+}
+
+.levelChoice:HOVER {
+	cursor: pointer;
+}
+
+.levelChoice .character {
+	float: left;
+}
+
+#playground {
+	height: 96px;
+	clear: both;
+}
+
+.character {
+	width: 40px;
+	height: 40px;
+	background-image: url( "../images/characters.png" );
+	opacity: 0.6;
+}
+
+.character.box_center {
+	position:absolute; 
+  	left: 50%;  
+  	top: 50%; 
+	margin-top: -20px; /* moiti� de la hauteur */ 
+  	margin-left: -20px; /* moiti� de la largeur */
+}
+
+.character.E {
+	background-position: 0px 0px;
+}
+.character.M {
+	background-position: -40px 0px;
+}
+.character.H {
+	background-position: -80px 0px;
+}
+.character.X {
+	background-position: -120px 0px;
+}
+.character.VS {
+	background-position: -160px 0px;
+}
+
+#countdown { 
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 48px;
+	top: 2px;
+}
+
+.clock {
+	background: transparent url( "../images/font.png" ) no-repeat top left;
+	height:16px; 
+	width:16px; 
+	float:left;
+}
+
+.n0 { 
+	background-position : 0 0px;
+}
+.n1 { 
+	background-position : -16px 0;
+}
+.n2 { 
+	background-position : -32px 0;
+}
+.n3 { 
+	background-position : -48px 0;
+}
+.n4 { 
+	background-position : -64px 0;
+}
+.n5 { 
+	background-position : -80px 0;
+}
+.n6 { 
+	background-position : -96px 0;
+}
+.n7 { 
+	background-position : -112px 0;
+}
+.n8 { 
+	background-position : -128px 0;
+}
+.n9 { 
+	background-position : -144px 0;
+}
+
+#scoreboard	{ 
+	position: absolute;
+	left: 10px;
+	top: 2px;
+	width: 96px;
+	height: 16px;
+}
+
+#scoreboard	.n0 { 
+	background-position : -160px 0;
+}
+#scoreboard	.n1 { 
+	background-position : -176px 0;
+}
+#scoreboard	.n2 { 
+	background-position : -192px 0;
+}
+#scoreboard	.n3 { 
+	background-position : -208px 0;
+}
+#scoreboard	.n4 { 
+	background-position : -224px 0;
+}
+#scoreboard	.n5 { 
+	background-position : -240px 0;
+}
+#scoreboard	.n6 { 
+	background-position : -256px 0;
+}
+#scoreboard	.n7 { 
+	background-position : -272px 0;
+}
+#scoreboard	.n8 { 
+	background-position : -288px 0;
+}
+#scoreboard	.n9 { 
+	background-position : -304px 0;
+}
+
+#step_title {
+	height: 16px;
+	position: absolute;
+	left: 50%;  
+  	top: 50%; 
+  	margin-top: -8px;
+}
+
+.portrait {
+	width: 264px;
+	height: 225px;
+	visibility: hidden;
+	background-image: url( "../images/portraits.png" );
+	background-repeat: no-repeat;
+	position: relative;
+  	margin-top: -130px;
+  	margin-left: -100px;
+  	top: 50%;
+  	left: 50%;
+}
+
+.portrait.E {
+	background-position: 0px 0px;
+}
+.portrait.M {
+	background-position: -264px 0px;
+}
+.portrait.H {
+	background-position: -528px 0px;
+}
+.portrait.X {
+	background-position: -792px 0px;
+}
+
+.levelDescription {
+	position: relative;
+	clear: both;
+	padding: 15px;	
+}
+
+.levelDescription div.level {
+	height: 16px;
+	float: left;
+}
+
+.desc {
+	position: absolute; 
+	top: 32px;
+	left: 60px;
+}
+
+.health_bar {
+	height: 10px;
+	width: 100px;
+	position: absolute;
+	top: 5px;
+	background-color: black;
+}
+
+.health_level {
+	height: 8px;
+	position: relative;
+	margin: 1px;
+}
+.health_level.good {
+	background-color: green;
+}
+.health_level.middle {
+	background-color: yellow;
+}
+.health_level.bad {
+	background-color: red;
+}
+
+.level {
+	position: relative; 
+	top: 7px; 
+	left: 7px;
+	float: right;
+}
+.highlight {
+	display: none;
+}
+
+body {
+	position: fixed;
+	width: 550px;
+	left: 50%;
+	margin-left: -275px;
+}
+
+#waitingGame > div {
+	display: inline-block;
+	height: 261px;
+	float: left;
+}
+
+#level {
+	width:100%;
+	float: both;
+}
+
+#label {
+	width: 100%;
+}
+
+.button {
+    background-color: white;
+    border: 2px solid #e7e7e7;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12%;
+    margin: auto;
+    margin-top: 25px;
+}

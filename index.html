@@ -1,0 +1,192 @@
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/wordfighters.css" />
+        
+        <script src="lib/jquery-1.7.1.js" type="application/javascript"></script>
+        <script src="lib/jquery.i18n.js" type="application/javascript"></script>
+        <script src="lib/jquery.mockjax.min.js" type="application/javascript"></script>
+        <script src="lib/gamequery-0.7.1.js" type="application/javascript"></script>
+        <script src="lib/utf.js" type="application/javascript"></script>
+        <script src="lib/gunzip.min.js" type="application/javascript"></script>
+        
+        <script src="js/mock.js" type="application/javascript"></script>
+        <script src="js/countdown.js" type="application/javascript"></script>
+        <script src="js/scoreboard.js" type="application/javascript"></script>
+        <script src="js/wordfighters.js" type="application/javascript"></script>
+        <script src="js/fighters.js" type="application/javascript"></script>
+        <script src="js/dictionary.js" type="application/javascript"></script>
+        
+        <script type="application/javascript">
+            
+            if( (navigator.language || navigator.userLanguage) == 'fr' ) {
+                $.i18n.load(dictionary.fr);
+            } else {
+                $.i18n.load(dictionary.en);
+            }
+            WordFighter.id = 0; // Used for multiplayer mode
+            WordFighter.mode = "single"; // 'dual' if multiplayer
+            var opponent = "/";
+              
+            var game_waiting_ready=$.i18n._('game.waiting.ready');
+            var game_start=$.i18n._('game.start');
+            var game_win=$.i18n._('game.win');
+            var game_loose=$.i18n._('game.loose');
+            var game_draw=$.i18n._('game.draw');
+        </script>        
+    </head>
+    <body>
+        <div id="waitingGame">
+            <div>
+                <div id="level" class="levelChoice"></div>
+                <div id="E" class="levelChoice">
+                    <div id="easy" class="character E"></div>
+                    <div id="levelE" class="level unfocus"></div>
+                    <div id="levelEHighlight" class="level highlight"></div>
+                </div>
+                <div id="M" class="levelChoice">
+                    <div id="medium" class="character M"></div>
+                    <div id="levelM" class="level unfocus"></div>
+                    <div id="levelMHighlight" class="level highlight"></div>
+                </div>
+                <div id="H" class="levelChoice">
+                    <div id="hard" class="character H"></div>
+                    <div id="levelH" class="level unfocus"></div>
+                    <div id="levelHHighlight" class="level highlight"></div>
+                </div>
+                <div id="X" class="levelChoice">
+                    <div id="extreme" class="character X"></div>
+                    <div id="levelX" class="level unfocus"></div>
+                    <div id="levelXHighlight" class="level highlight"></div>
+                </div>
+            </div>
+            <div>
+                <div id="fighter1portrait" class="portrait" style="visibility: visible;"></div>
+            </div>
+            <div id="label" style="bottom: 0px; position: relative; text-align: center;">
+                Search words between 3 and 7 letters
+            </div>
+        </div>
+        <div id="gamePanel" style="display: none;">
+            <div class="span7">
+                <div style="width: 384px; height: 125px; margin-left: auto; margin-right: auto;">
+                    <div id="playground"></div>
+                </div>
+
+                <div id="letters">
+                    <div id="typed">
+                        <span> <img id="typed1" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="typed2" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="typed3" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="typed4" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="typed5" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="typed6" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="typed7" class="letter" src="images/0_dot.gif" /> </span>
+                    </div>
+
+                    <div id="suggested">
+                        <span> <img id="letter1" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="letter2" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="letter3" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="letter4" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="letter5" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="letter6" class="letter" src="images/0_dot.gif" /> </span>
+                        <span> <img id="letter7" class="letter" src="images/0_dot.gif" /> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="valid">
+                <div id="valid3column">
+                    <span id="3lettersWords">3 letters</span>
+                    <ul id="valid3"></ul>
+                </div>
+                <div id="valid4column">
+                    <span id="4lettersWords">4 letters</span>
+                    <ul id="valid4"></ul>
+                </div>
+                <div id="valid5column">
+                    <span id="5lettersWords">5 letters</span>
+                    <ul id="valid5"></ul>
+                </div>
+                <div id="valid6column">
+                    <span id="6lettersWords">6 letters</span>
+                    <ul id="valid6"></ul>
+                </div>
+                <div id="valid7column">
+                    <span id="7lettersWords">7 letters</span>
+                    <ul id="valid7"></ul>
+                </div>
+            </div>
+        </div>
+
+        <span class="button" style="display: none;">
+            <div id="replay" >
+            </div>
+        </span>
+
+        <script type="application/javascript">
+
+            
+            $(document).ready(function () {
+                display_text($.i18n._('game.choose.level'), '#level', 1, false);
+                display_text($.i18n._('game.level.E'), '#levelE', 2);
+                display_text($.i18n._('game.level.E'), '#levelEHighlight', 1);
+                display_text($.i18n._('game.level.M'), '#levelM', 2);
+                display_text($.i18n._('game.level.M'), '#levelMHighlight', 1);
+                display_text($.i18n._('game.level.H'), '#levelH', 2);
+                display_text($.i18n._('game.level.H'), '#levelHHighlight', 1);
+                display_text($.i18n._('game.level.X'), '#levelX', 2);
+                display_text($.i18n._('game.level.X'), '#levelXHighlight', 1);
+                
+                display_text($.i18n._('game.replay'), '#replay', 1, false);
+                
+                $('#3lettersWords').html($.i18n._('wordfighter.letters', 3));
+                $('#4lettersWords').html($.i18n._('wordfighter.letters', 4));
+                $('#5lettersWords').html($.i18n._('wordfighter.letters', 5));
+                $('#6lettersWords').html($.i18n._('wordfighter.letters', 6));
+                $('#7lettersWords').html($.i18n._('wordfighter.letters', 7));
+                
+                var currentLevel = null;
+                var labels = new Array();
+                labels[ "E" ] = $.i18n._('wordfighter.howto.E');
+                labels[ "M" ] = $.i18n._('wordfighter.howto.M');
+                labels[ "H" ] = $.i18n._('wordfighter.howto.H');
+                labels[ "X" ] = $.i18n._('wordfighter.howto.X');
+                $("#label").html( labels[ 'E'] );
+                $( ".levelChoice" ).hover( 
+                    function () {
+                        $(this).find("div.character").css({ opacity: 1 });
+                        $(this).find("div.unfocus").toggle();
+                        $(this).find("div.highlight").toggle();
+                        $("#fighter1portrait").addClass(this.id);
+            
+                        $("#label").html( labels[ this.id] );
+                    }, 
+                    function () {
+                        $(this).find("div.character").css({ opacity: 0.6 });
+                        $(this).find("div.unfocus").toggle();
+                        $(this).find("div.highlight").toggle();
+                        $("#fighter1portrait").removeClass(this.id);
+                    }
+                );
+            
+                $('.levelChoice').click(function() {
+                    WordFighter.change_level( this.id );
+                    WordFighter.notify_dual();
+                });
+                
+                if( $.browser.webkit ) {
+                    $(document).keydown(WordFighter.prevent_backspace);
+                }
+                $(document).keypress(WordFighter.keypressedHandler);
+
+                $(".button").bind( "click", function() {
+                    window.location.reload();
+                } );
+            });
+        </script>
+    </body>
+
+</html>
