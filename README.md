@@ -1,26 +1,63 @@
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+**Word Fighters** is a word game where you must find a maximum words to get the highscore.
 
+How to :
+---
 
-Hi there! Welcome to Cloud9 IDE!
+When you click on the "Start" button, a combinaison of letters is generated.
 
-To get you started, we included a small hello world application.
+The goal is to retrieve a maximum of words with these letters using your keyboard.
 
-1) Open the hello-world.html file
+To validate a word, simply press the "Enter" key.
 
-2) Click on the Preview button to open a live preview pane
+To get new letters, press the "Space" bar.
+* Easy : Search words between 3 and 7 letters
+* Medium : Search words between 3 and 6 letters
+* Hard : Search words between 4 and 7 letters
+* Extreme : No escape ! You can\'t have new letters before reach all words !
+        
+If you are blocked, you can switch letters but be careful : you loose 5 points per words not found !!
 
-3) Make some changes to the file, save, watch the preview, and have fun!
+A live demo is avalaible here
 
-Happy coding!
-The Cloud9 IDE team
+Under the hood :
+---
+Originally designed to run with a server, it's playable such as.
+If running with a server, 2 modes are availables :
+* 1 player : Try to beat your highscore. Include the *wordfighters_single.js* to enable the server pipe.
+* 2 players : Try to defeat your opponent hitting him/her. The longest the word found is, the stongest damages are !! Include the *wordfighters_multplayer.js* to enable the server pipe.
 
+Words dictionary is provided by the [Scrabble-Resolver](https://github.com/Febbweiss/scrabble-resolver) project.
+Currently, only english and french dictionaries are provided.
 
-## Support & Documentation
+Credits :
+---
+Graphics : Namco&trade; from "Super Puzzle Fighters 2" and "Super Gems Fighters
 
-Visit http://docs.c9.io for documentation, or http://support.c9.io for support.
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+Code : Fabrice Ecaille aka Febbweiss
+
+Tools : gameQuery
+
+<dl>
+        <dt>
+                <g:message code="game.credits.graphics" />
+        </dt>
+        <dd>
+                <g:message code="wordfighter.credits.graphics.author" />
+        </dd>
+        <dt>
+                <g:message code="game.credits.code" />
+        </dt>
+        <dd>
+                <g:message code="wordfighter.credits.code.author" />
+        </dd>
+        <dt>
+                <g:message code="game.credits.tools" />
+        </dt>
+        <dd>
+                <g:message code="wordfighter.credits.tools" />
+        </dd>
+</dl>
+
+Licences :
+---
+Source code is under MIT Licence Sprite is under CC BY-SA 3.0
